@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <h1 class="text-center">Picturall</h1>
+</div><!-- Picturall -->
+<div class="row">
+    <div class="col-md-12">
+        <input type="search" 
+            ng-model="filter"
+            ng-model-options="{ debounce: 500 }"
+            class="form-control"
+            placeholder="Filter for title">   
+    </div>
+</div><!-- End Filter -->
+<div class="row">
+    <my-panel class="col-md-2 fade-panel" ng-repeat="picture in pictures
+        | filter: filter"
+        title="{{picture.titulo}}"
+        img="{{picture.url}}">                    
+    </my-panel>
+</div><!-- End pictures -->

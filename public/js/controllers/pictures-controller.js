@@ -1,7 +1,7 @@
 angular.module('picturall').controller('PicturesController', function($scope, $http) {
 	$scope.pictures = [];
 	$scope.filter   = "";
-	
+	// Get pictures and assigns into the $scope.pictures
 	$http.get('/v1/fotos')
 	.success(function(pictures){
 		$scope.pictures = pictures;
@@ -19,4 +19,4 @@ angular.module('picturall').controller('PicturesController', function($scope, $h
 		console.log(error);
 	});
 	*/
-});
+}); 

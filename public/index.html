@@ -2,38 +2,22 @@
 <html lang="pt-br" ng-app="picturall">
     <head>
         <meta charset="UTF-8">
+        <base href="/">
         <meta name="viewport" content="width=device-width">
         <title>Picturall</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/efects.css">
-        <script src="js/lib/angular.min.js"></script>
-        <script src="js/lib/angular-animate.min.js"></script>
+        <script src="js/lib/angular.min.js"></script>        
+        <script src="js/lib/angular-animate.min.js"></script>        
+        <script src="js/lib/angular-route.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/pictures-controller.js"></script>
         <script src="js/directives/my-directives.js"></script>
     </head> 
-    <body ng-controller="PicturesController">
+    <body>
         <div class="container">
-            <div class="jumbotron">
-                <h1 class="text-center">Picturall</h1>
-            </div><!-- Picturall -->
-            <div class="row">
-                <div class="col-md-12">
-                    <input type="search" 
-                        ng-model="filter"
-                        ng-model-options="{ debounce: 500 }"
-                        class="form-control"
-                        placeholder="Filter for title">   
-                </div>
-            </div><!-- End Filter -->
-            <div class="row">
-                <my-panel class="col-md-2 fade-panel" ng-repeat="picture in pictures
-                    | filter: filter"
-                    title="{{picture.titulo}}"
-                    img="{{picture.url}}">                    
-                </my-panel>
-            </div><!-- End pictures -->
-        </div><!-- End container -->
+            <ng-view></ng-view>
+        </div>
     </body>
 </html>   
