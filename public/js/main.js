@@ -15,7 +15,7 @@ angular.module('picturall', ['myDirectives', 'ngAnimate', 'ngRoute'])
 	// Create route to record photos
 	$routeProvider.when('/pictures/new', {
 		templateUrl: 'partials/new.html',
-		controller:  'PicturesController'
+		controller:  'PictureController'
 	});
 	// Create route to inconsistent urls 
 	$routeProvider.when('/errors', {

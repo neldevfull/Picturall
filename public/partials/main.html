@@ -3,17 +3,25 @@
 </div><!-- Picturall -->
 <div class="row">
     <div class="col-md-12">
-        <input type="search" 
-            ng-model="filter"
-            ng-model-options="{ debounce: 500 }"
-            class="form-control"
-            placeholder="Filter for title">   
+        <form>
+            <div class="input-group">
+                <span class="input-group-btn">                
+                    <a href="pictures/new" class="btn btn-primary">
+                        New Picture</a>
+                </span>
+                <input type="search" 
+                    ng-model="filter"
+                    ng-model-options="{ debounce: 500 }"
+                    class="form-control"
+                    placeholder="Filter for title">                               
+            </div>
+        </form>
     </div>
 </div><!-- End Filter -->
 <div class="row">
-    <my-panel class="col-md-2 fade-panel" ng-repeat="picture in pictures
-        | filter: filter"
-        title="{{picture.titulo}}"
-        img="{{picture.url}}">                    
-    </my-panel>
+    <my-panel class="col-md-2 fade-panel"
+        ng-repeat="picture in pictures | filter: filter"
+        title="{{picture.titulo}}">
+        <my-picture img="{{picture.url}}" title="{{picture.titulo}}"></my-picture>                     
+    </my-panel> 
 </div><!-- End pictures -->

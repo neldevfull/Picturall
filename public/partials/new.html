@@ -1,1 +1,47 @@
-<h1>New Picture</h1>
+<h1 class="page-header text-center">New Picture: {{picture.title}}</h1>
+<p ng-show="message.length" class="alert alert-info">{{message}}</p>
+
+<form novalidate name="new_picture" class="row" ng-submit="submit()">
+    <div class="col-md-6">
+        <div class="form-group">            
+            <input ng-model="picture.titulo" name="title"
+                placeholder="Picture"
+                class="form-control" required ng-maxlength="20">
+            <span ng-show="new_picture.$submitted &&
+                new_picture.title.$error.required"
+                class="form-control alert-danger">
+                Title is mandatory
+            </span>  
+            <span ng-show="new_picture.title.$error.maxlength"
+                class="form-control alert-danger">
+                Must have at least 20 characteres
+            </span>   
+        </div>
+        <div class="form-group">            
+            <input ng-model="picture.url" name="url"
+                placeholder="URL"
+                class="form-control" required>
+            <span ng-show="new_picture.$submitted &&
+                new_picture.url.$error.required"
+                class="form-control alert-danger">
+                URL is mandatory
+            </span>
+        </div>
+        <div class="form-group">            
+            <textarea ng-model="picture.descricao" 
+                placeholder="Description"
+            	name="description" class="form-control">
+            </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary"
+            ng-disabled="new_picture.$invalid">
+            Save
+        </button>
+         <a href="/" class="btn btn-primary">Back</a>
+        <hr>
+    </div>
+    <div class="col-md-6">
+        <my-picture img="{{picture.url}}" title="{{picture.title}}"></my-picture> 
+    </div>
+</form>
