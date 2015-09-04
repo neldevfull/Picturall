@@ -1,4 +1,4 @@
-<h1 class="page-header text-center">New Picture: {{picture.title}}</h1>
+<h1 class="page-header text-center">New Picture: {{picture.titulo}}</h1>
 <p ng-show="message.length" class="alert alert-info">{{message}}</p>
 
 <form novalidate name="new_picture" class="row" ng-submit="submit()">
@@ -9,7 +9,7 @@
                 class="form-control" required ng-maxlength="20">
             <span ng-show="new_picture.$submitted &&
                 new_picture.title.$error.required"
-                class="form-control alert-danger">
+                class="form-control alert-danger"> 
                 Title is mandatory
             </span>  
             <span ng-show="new_picture.title.$error.maxlength"

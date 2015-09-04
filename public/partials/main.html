@@ -1,13 +1,17 @@
 <div class="jumbotron">
     <h1 class="text-center">Picturall</h1>
 </div><!-- Picturall -->
+<p class="alert alert-info"
+    ng-show="message.length != 0">
+    {{message}}
+</p>
 <div class="row">
     <div class="col-md-12">
         <form>
             <div class="input-group">
                 <span class="input-group-btn">                
                     <a href="pictures/new" class="btn btn-primary">
-                        New Picture</a>
+                        New Picture</a> 
                 </span>
                 <input type="search" 
                     ng-model="filter"
@@ -22,6 +26,8 @@
     <my-panel class="col-md-2 fade-panel"
         ng-repeat="picture in pictures | filter: filter"
         title="{{picture.titulo}}">
-        <my-picture img="{{picture.url}}" title="{{picture.titulo}}"></my-picture>                     
+        <my-picture img="{{picture.url}}" title="{{picture.titulo}}"></my-picture>    
+        <a href="pictures/edit/{{picture._id}}" class="btn btn-primary btn-block">Modify</a>                 
+        <button ng-click="remove(picture)" class="btn btn-danger btn-block">Delete</button>
     </my-panel> 
-</div><!-- End pictures -->
+</div><!-- End pictures --> 
