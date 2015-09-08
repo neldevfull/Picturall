@@ -1,4 +1,4 @@
-picturall = angular.module('picturall', ['myDirectives', 'ngAnimate', 'ngRoute']);
+picturall = angular.module('picturall', ['myDirectives', 'ngAnimate', 'ngRoute', 'myServices']);
 
 // config routes
 picturall.config(function($routeProvider, $locationProvider) {
